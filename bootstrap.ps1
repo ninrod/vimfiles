@@ -25,9 +25,9 @@ if(!(Test-Path -Path $pathogen_bundle_dir)) {
 } else {
     log "bundle dir $pathogen_bundle_dir exists. skipping creation."
 }
+Set-Location $PSScriptRoot\$pathogen_bundle_dir
 
 # fetch core editing deps
-Set-Location $PSScriptRoot\$pathogen_bundle_dir
 [git_helper]::ningrab("bronson/vim-visual-star-search")
 [git_helper]::ningrab("chaoren/vim-wordmotion")
 [git_helper]::ningrab("ervandew/supertab")
@@ -42,7 +42,10 @@ Set-Location $PSScriptRoot\$pathogen_bundle_dir
 [git_helper]::ningrab("wellle/targets.vim")
 [git_helper]::ningrab("kana/vim-textobj-user")
 [git_helper]::ningrab("kana/vim-textobj-entire")
+[git_helper]::ningrab("PProvost/vim-ps1")
 
 # fetch cosmetic deps
 [git_helper]::ningrab("morhetz/gruvbox")
 [git_helper]::ningrab("itchyny/lightline.vim")
+
+Set-Location $PSScriptRoot
