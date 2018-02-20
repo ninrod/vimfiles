@@ -17,22 +17,32 @@ if(!(Test-Path -Path $pathogen_dir)) {
     log "$pathogen_dir found, exiting"
 }
 
-# # fetch core editing deps
-# ningrab bronson/vim-visual-star-search
-# ningrab chaoren/vim-wordmotion
-# ningrab ervandew/supertab
-# ningrab jiangmiao/auto-pairs
-# ningrab ninrod/vim-multiple-cursors
-# ningrab tommcdo/vim-exchange
-# ningrab tpope/vim-commentary
-# ningrab tpope/vim-pathogen
-# ningrab tpope/vim-repeat
-# ningrab tpope/vim-surround
-# ningrab vim-scripts/ReplaceWithRegister
-# ningrab wellle/targets.vim
-# ningrab kana/vim-textobj-user
-# ningrab kana/vim-textobj-entire
+log "ensuring bundle dir exists"
+$pathogen_bundle_dir = "bundle"
+if(!(Test-Path -Path $pathogen_bundle_dir)) {
+    log "bundle dir $pathogen_bundle_dir does not exist. creating..."
+    New-Item -ItemType directory -Path $pathogen_bundle_dir
+} else {
+    log "bundle dir $pathogen_bundle_dir exists. skipping creation."
+}
 
-# # fetch cosmetic deps
-# ningrab morhetz/gruvbox
-# ningrab itchyny/lightline.vim
+# fetch core editing deps
+Set-Location $PSScriptRoot\$pathogen_bundle_dir
+[git_helper]::ningrab("bronson/vim-visual-star-search")
+[git_helper]::ningrab("chaoren/vim-wordmotion")
+[git_helper]::ningrab("ervandew/supertab")
+[git_helper]::ningrab("jiangmiao/auto-pairs")
+[git_helper]::ningrab("terryma/vim-multiple-cursors")
+[git_helper]::ningrab("tommcdo/vim-exchange")
+[git_helper]::ningrab("tpope/vim-commentary")
+[git_helper]::ningrab("tpope/vim-pathogen")
+[git_helper]::ningrab("tpope/vim-repeat")
+[git_helper]::ningrab("tpope/vim-surround")
+[git_helper]::ningrab("vim-scripts/ReplaceWithRegister")
+[git_helper]::ningrab("wellle/targets.vim")
+[git_helper]::ningrab("kana/vim-textobj-user")
+[git_helper]::ningrab("kana/vim-textobj-entire")
+
+# fetch cosmetic deps
+[git_helper]::ningrab("morhetz/gruvbox")
+[git_helper]::ningrab("itchyny/lightline.vim")

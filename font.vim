@@ -1,3 +1,4 @@
 if has("gui_running")
-  set guifont=Hack:h16
+  " set guifont=Fantasque\ Sans\ Mono:h15
+  set guifont=Hack:h15
 endif
