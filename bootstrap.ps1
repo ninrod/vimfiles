@@ -6,14 +6,13 @@ Set-Location $PSScriptRoot
 
 # setting up pathogen
 $pathogen_dir = ".\autoload"
-$pathogen_url = "https://github.com/tpope/vim-pathogen.git" 
+$pathogen_uri = "https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim"
+$pathogen_dst = ".\autoload\pathogen.vim"
 log "verifying if $pathogen_dir exist."
 if(!(Test-Path -Path $pathogen_dir)) {
     log "$pathogen_dir does not exist, creating it."
-    git clone $pathogen_url 
     New-Item -ItemType directory -Path $pathogen_dir
-    Copy-Item vim-pathogen/autoload/pathogen.vim -Destination $pathogen_dir
-    Remove-Item .\vim-pathogen -Force -Recurse
+    [git_helper]::curl($pathogen_uri, $pathogen_dst)
 } else {
     log "$pathogen_dir found, exiting"
 }
