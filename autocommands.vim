@@ -37,5 +37,6 @@ autocmd Bufread,BufNewFile *.bowerrc set filetype=json
 " http://vim.wikia.com/wiki/Word_wrap_without_line_breaks
 autocmd Filetype markdown setlocal wrap linebreak nolist textwidth=0 wrapmargin=0 conceallevel=0 fdm=expr
 autocmd FileType sh,ruby,yaml,zsh,vim setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType ps1 setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType java setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd Filetype gitcommit setlocal spell textwidth=80
