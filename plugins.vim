@@ -24,5 +24,5 @@ let g:rainbow_active = 1
 let g:multi_cursor_exit_from_visual_mode=0
 let g:multi_cursor_exit_from_insert_mode=0
 
-" autopairs fixes
-let g:AutoPairsMapSpace=0
+" bufexplorer tweaks
+let g:bufExplorerDisableDefaultKeyMapping=1

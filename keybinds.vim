@@ -38,3 +38,5 @@ nmap <leader>l <C-W>l
 nmap <space>j <C-F>
 nmap <space>k <C-B>
 
+" buffer operations
+nmap <leader>i :ToggleBufExplorer<cr>

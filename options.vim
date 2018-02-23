@@ -34,6 +34,9 @@ set showcmd
 " show line numbers on status line
 set ruler
 
+" relative line numbers
+set rnu
+
 " with this option on, a buffer is marked as ‘hidden’ if it has unsaved changes, and it is not currently loaded in a window.
 " If you try and quit Vim while there are hidden buffers, you will raise an error:
 " E162: No write since last change for buffer “a.txt”

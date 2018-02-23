@@ -43,6 +43,7 @@ Set-Location $PSScriptRoot\$pathogen_bundle_dir
 [git_helper]::ningrab("kana/vim-textobj-user")
 [git_helper]::ningrab("kana/vim-textobj-entire")
 [git_helper]::ningrab("PProvost/vim-ps1")
+[git_helper]::ningrab("jlanzarotta/bufexplorer")
 
 # fetch cosmetic deps
 [git_helper]::ningrab("morhetz/gruvbox")
