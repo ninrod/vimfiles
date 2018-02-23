@@ -40,3 +40,6 @@ nmap <space>k <C-B>
 
 " buffer operations
 nmap <leader>i :ToggleBufExplorer<cr>
+
+" nerdtree
+nnoremap <BS> :NERDTreeToggle<CR>
