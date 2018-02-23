@@ -27,6 +27,8 @@ xnoremap ao aw
 onoremap io iw
 onoremap ao aw
 
+nnoremap mk :bd<cr>
+
 " window operations
 nmap <leader>y <C-W>v
 nmap <leader>x <C-W>s
@@ -39,7 +41,7 @@ nmap <space>j <C-F>
 nmap <space>k <C-B>
 
 " buffer operations
-nmap <leader>i :ToggleBufExplorer<cr>
+nmap mi :ToggleBufExplorer<cr>
 
 " nerdtree
 nnoremap <BS> :NERDTreeToggle<CR>
