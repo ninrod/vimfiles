@@ -16,8 +16,7 @@ class git_helper {
     }
 
     static [void]curl($uri, $dst) {
-        $client = new-object System.Net.WebClient
-        $client.DownloadFile($uri, $dst)
+        Invoke-RestMethod -Uri $uri -Method Get | Out-File $dst
     }
 
     static [string]tail($repo_name) {
